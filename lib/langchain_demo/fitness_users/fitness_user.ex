@@ -54,6 +54,6 @@ defmodule LangChainDemo.FitnessUsers.FitnessUser do
       :fitness_plan_for_week,
       :timezone
     ])
-    |> validate_required([])
+    |> validate_required([:name])
   end
 end

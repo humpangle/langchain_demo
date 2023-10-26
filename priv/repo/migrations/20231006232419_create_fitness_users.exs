@@ -3,7 +3,7 @@ defmodule LangChainDemo.Repo.Migrations.CreateFitnessUsers do
 
   def change do
     create table(:fitness_users) do
-      add :name, :string
+      add :name, :string, null: false
       add :gender, :string
       add :age, :integer
       add :why, :string

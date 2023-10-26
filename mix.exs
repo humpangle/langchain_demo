@@ -24,7 +24,8 @@ defmodule LangChainDemo.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:dev), do: ["lib", "lib_dev"]
+  defp elixirc_paths(:test), do: elixirc_paths(:dev) ++ ["test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -57,7 +58,9 @@ defmodule LangChainDemo.MixProject do
       {:yaml_elixir, "~> 2.9.0"},
       # timezone database
       {:tzdata, "~> 1.1"},
-      {:abacus, "~> 2.0.0"}
+      {:abacus, "~> 2.0.0"},
+      {:sequence, github: "callmiy/sequence", only: [:dev, :test]},
+      {:mix_test_interactive, "~> 1.2", only: [:dev, :test], runtime: false}
     ]
   end
 

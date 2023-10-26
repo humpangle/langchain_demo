@@ -69,6 +69,7 @@ defmodule LangChainDemoWeb do
   def html do
     quote do
       use Phoenix.Component
+      import LangChainDemoWeb.CoreComponents
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
